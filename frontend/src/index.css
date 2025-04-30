@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Put this in your global CSS (like index.css) */
+
+::-webkit-scrollbar {
+  width: 8px; /* scrollbar width */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* transparent track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(100, 116, 139, 0.5); /* light grey thumb */
+  border-radius: 10px; /* rounded corners */
+  border: 2px solid transparent; /* space around thumb */
+  background-clip: padding-box; /* make the thumb inside border */
+}
+
+/* Optional: when hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(100, 116, 139, 0.7);
+}
