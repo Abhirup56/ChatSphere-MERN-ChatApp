@@ -16,7 +16,7 @@ export const SocketProvider = ({ children }) => {
 
   useEffect(() => {
     if (authuser) {
-      const socket = io("http://localhost:5000", {
+      const socket = io("https://chatsphereapp-jp70.onrender.com", {
         query: {
           userId: authuser.user._id,
         },
