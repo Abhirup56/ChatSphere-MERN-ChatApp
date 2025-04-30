@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "axios": "^1.7.9",
+    "backend2": "file:..",
     "emoji-picker-react": "^4.12.2",
     "js-cookie": "^3.0.5",
     "react": "^18.3.1",
