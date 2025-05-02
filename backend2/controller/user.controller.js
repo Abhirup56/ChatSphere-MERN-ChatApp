@@ -1,38 +1,57 @@
 import User from "../models/user.model.js";
-import bcrypt from "bcryptjs";
+import bcrypt from "bcrypt";
+import createToken from "../jwt/gentoken.js";
+import User from "../models/user.model.js";
+import bcrypt from "bcrypt";
 import createToken from "../jwt/gentoken.js";
 export const signup = async (req, res) => {
   try {
     const { name, email, password, confirmpassword } = req.body;
-    if (password !== confirmpassword) {
-      return res.status(400).json({ message: "Password not match" });
+
+    // 1. Check all fields
+    if (!name || !email || !password || !confirmpassword) {
+      return res.status(400).json({ message: "All fields are required" });
     }
+
+    // 2. Check password match
+    if (password !== confirmpassword) {
+      return res.status(400).json({ message: "Passwords do not match" });
+    }
+
+    // 3. Check if user exists
     const user = await User.findOne({ email });
     if (user) {
-      return res.status(400).json({ message: "Email already exist" });
-    } else {
-      const hashedPassword = await bcrypt.hash(password, 10);
-      const newUser = new User({
-        name,
-        email,
-        password: hashedPassword,
-      });
-      await newUser.save();
-      if (newUser) {
-        createToken(newUser._id, res);
-        return res.status(201).json({
-          message: "USER SUCESSFULLY REGISTERD",
-          user: {
-            _id: newUser._id,
-            name: newUser.name,
-            email: newUser.email,
-          },
-        });
-      }
+      return res.status(400).json({ message: "Email already exists" });
     }
+
+    // 4. Hash password
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    // 5. Create user (gender not passed here, so default will be used)
+    const newUser = new User({
+      name,
+      email,
+      password: hashedPassword,
+    });
+
+    await newUser.save();
+
+    // 6. Create token and respond
+    createToken(newUser._id, res); // Sets cookie/token
+
+    return res.status(201).json({
+      message: "User successfully registered",
+      user: {
+        _id: newUser._id,
+        name: newUser.name,
+        email: newUser.email,
+        gender: newUser.gender, // default is "Others"
+      },
+    });
+
   } catch (error) {
-    console.log(error);
-    return res.status(500).json({ message: "server error" });
+    console.error("Signup error:", error);
+    return res.status(500).json({ message: "Server error" });
   }
 };
 export const login = async (req, res) => {
