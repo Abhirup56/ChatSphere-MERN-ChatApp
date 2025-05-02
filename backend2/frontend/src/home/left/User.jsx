@@ -10,7 +10,18 @@ function User({ user }) {
   const Name = upper + lower;
   const { online } = useSocket();
   const isOnline = online.some((u) => u.userId === user._id);
-
+  
+  const getGender = (gender) => {
+    if(gender === "male"){
+      return "./male.png"
+    }
+    else if(gender === "female"){
+      return "./female.png"
+    }
+    else{
+      return "./other.png"
+    }
+  }
   return (
     <div
       className={`flex items-center space-x-3 p-2 cursor-pointer rounded-lg transition duration-200 ${
@@ -20,7 +31,7 @@ function User({ user }) {
     >
       <div className={`avatar ${isOnline ? 'online' : ''}`}>
         <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full">
-          <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" alt="User avatar" />
+          <img src={getGender(user.gender)} alt="User avatar" />
         </div>
       </div>
       <div className="flex flex-col">
