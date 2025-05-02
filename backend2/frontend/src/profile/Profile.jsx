@@ -23,11 +23,11 @@ function Profile() {
   }, [authuser]);
   const updateDp = (selectedGender) => {
     if (selectedGender === "Male") {
-      setDp("/male.png");
+      setDp(`${import.meta.env.BASE_URL}male.png`);
     } else if (selectedGender === "Female") {
-      setDp("/female.png");
+      setDp(`${import.meta.env.BASE_URL}female.png`);
     } else {
-      setDp("/other.jpg");
+      setDp(`${import.meta.env.BASE_URL}other.png`);
     }
   };
   const handleGenderChange = async (e) => {
