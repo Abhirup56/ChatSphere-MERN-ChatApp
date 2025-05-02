@@ -1,9 +1,7 @@
 import User from "../models/user.model.js";
 import bcrypt from "bcrypt";
 import createToken from "../jwt/gentoken.js";
-import User from "../models/user.model.js";
-import bcrypt from "bcrypt";
-import createToken from "../jwt/gentoken.js";
+
 export const signup = async (req, res) => {
   try {
     const { name, email, password, confirmpassword } = req.body;
