@@ -10,7 +10,8 @@ function User({ user }) {
   const Name = upper + lower;
   const { online } = useSocket();
   const isOnline = online.some((u) => u.userId === user._id);
-  
+
+  console.log(user.gender);
   const getGender = (gender) => {
     if(gender === "male"){
       return "./male.png"
