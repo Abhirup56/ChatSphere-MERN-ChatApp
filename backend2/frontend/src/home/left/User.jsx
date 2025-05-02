@@ -13,16 +13,15 @@ function User({ user }) {
 
   console.log(user.gender);
   const getGender = (gender) => {
-    if(gender === "male"){
-      return "./male.png"
-    }
-    else if(gender === "female"){
-      return "./female.png"
-    }
-    else{
-      return "./other.png"
-    }
+  if (gender === "Male") {
+    return `${import.meta.env.BASE_URL}male.png`;
+  } else if (gender === "Female") {
+    return `${import.meta.env.BASE_URL}female.png`;
+  } else {
+    return `${import.meta.env.BASE_URL}other.png`;
   }
+};
+
   return (
     <div
       className={`flex items-center space-x-3 p-2 cursor-pointer rounded-lg transition duration-200 ${
