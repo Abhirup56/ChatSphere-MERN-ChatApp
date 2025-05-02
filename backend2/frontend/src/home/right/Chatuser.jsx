@@ -16,13 +16,25 @@ function Chatuser() {
     setSelectedConvo(null);
   };
 
+  const getGender = (gender) => {
+    if(gender === "Male"){
+      return "/male.png"
+    }
+    else if(gender === "Female"){
+      return "/female.png"
+    }
+    else{
+      return "/other.png"
+    }
+  }
+
   return (
     <div className="flex items-center p-3 bg-DarkGray shadow-md h-[8vh] sm:h-[10vh] justify-between">
       <div className="flex gap-4">
         <div className="avatar">
           <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full">
             <img
-              src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+              src={getGender(selectedConvo?.gender)}
               alt="user"
             />
           </div>
