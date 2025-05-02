@@ -42,7 +42,7 @@ function Signup() {
   };
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col h-screen">
       <div className="bg-LightGray p-4 w-screen flex lg:justify-center">
         <h1 className="text-white text-2xl">Create an account</h1>
       </div>
