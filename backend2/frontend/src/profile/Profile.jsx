@@ -13,7 +13,7 @@ function Profile() {
   const Name = upper + lower;
 
   const [gender, setGender] = useState("");
-  const [dp, setDp] = useState("../../public/other.jpg");
+  const [dp, setDp] = useState("/other.jpg");
 
   useEffect(() => {
     if (authuser?.user?.gender) {
@@ -23,11 +23,11 @@ function Profile() {
   }, [authuser]);
   const updateDp = (selectedGender) => {
     if (selectedGender === "Male") {
-      setDp("../../public/male.png");
+      setDp("/male.png");
     } else if (selectedGender === "Female") {
-      setDp("../../public/female.png");
+      setDp("/female.png");
     } else {
-      setDp("../../public/other.jpg");
+      setDp("/other.jpg");
     }
   };
   const handleGenderChange = async (e) => {
