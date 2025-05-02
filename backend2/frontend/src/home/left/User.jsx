@@ -31,7 +31,7 @@ function User({ user }) {
     >
       <div className={`avatar ${isOnline ? 'online' : ''}`}>
         <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full">
-          <img src={getGender(user.gender)} alt="User avatar" />
+          <img src={getGender(user?.gender)} alt="User avatar" />
         </div>
       </div>
       <div className="flex flex-col">
