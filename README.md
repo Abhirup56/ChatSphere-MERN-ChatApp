@@ -53,7 +53,7 @@ A real-time, secure, and elegant chat application built with the **MERN Stack + 
 
 Hi, I'm **Abhirup**, a CS & Business Systems student passionate about full-stack development, clean design, and building real-world solutions.
 
-📬 Let's connect on [LinkedIn]([https://linkedin.com/in/your-link](https://www.linkedin.com/in/abhirup-ghosh-396251289?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app))
+📬 Let's connect on [LinkedIn]( https://linkedin.com/in/your-link](https://www.linkedin.com/in/abhirup-ghosh-396251289?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app )
 
 ---
 
