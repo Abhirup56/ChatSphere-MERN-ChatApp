@@ -25,7 +25,7 @@ function Message() {
       style={{
         height: "calc(92vh - 10vh)",
         backgroundImage: "url('/bg.jpg')",
-        backgroundSize: "cover",
+        
         backgroundPosition: "center",
       }}
       >
