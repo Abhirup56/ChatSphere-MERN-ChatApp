@@ -23,10 +23,11 @@ function Message() {
       <div
       className="flex flex-col gap-2 p-3 overflow-y-auto"
       style={{
-        height: "calc(92vh - 10vh)",
-        backgroundImage: "url('/bg.jpg')",
-        
-        backgroundPosition: "center",
+       height: "calc(92vh - 10vh)",
+      backgroundImage: "url('/bg.jpg')",
+      backgroundSize: "contain",
+      backgroundRepeat: "no-repeat",
+      backgroundPosition: "center",
       }}
       >
         {loading
